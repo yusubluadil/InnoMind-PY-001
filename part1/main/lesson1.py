@@ -122,3 +122,5 @@ say_hi = 'Salam' # str
 
 my_name = "Adil" # str
 print(my_name)
+
+print(say_hi[0:])
