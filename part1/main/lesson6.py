@@ -67,3 +67,100 @@ elif num1 == num2:
     print(f'{num1} {num2}-ə bərabərdir')
 else:
     print(f'{num2} {num1}-dən böyükdür')
+
+
+
+
+
+# Python conditions - Part 2
+
+# and -> və ("Vurma")
+
+if 5 > 3 and 10 > 5:
+    print('Hər iki şərt doğrudur')
+
+if 5 > 3 and 10 < 5:
+    print('Hər iki şərt doğrudur')
+
+
+# or -> və ya ("Toplama")
+
+# (1 or 1 = 1 + 1 = 1)
+if 5 > 3 or 10 > 5:
+    print('Hər iki şərt doğrudur')
+
+if 5 > 3 or 10 < 5:
+    print('Hər iki şərt doğrudur')
+
+
+# in; not in - İterable obyektlərdə axtarış
+
+county = 'Azerbaijan'
+letter = input('Hərf daxil edin: ')
+
+if letter in county:
+    print(f'{letter} hərfi {county} adında mövcuddur.')
+else:
+    print(f'{letter} hərfi {county} adında mövcud deyil.')
+
+
+numbers = [1, 2, 3, 4, 5]
+num = int(input('Rəqəm daxil edin: '))
+
+if num not in numbers:
+    print(f'{num} listdə mövcud deyil.')
+else:
+    print(f'{num} listdə mövcuddur.')
+
+
+# is; is not - Obyektin yaddaş ünvanını və dəyərini müqayisə edir.
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(id(a))
+print(id(b))
+
+if a is b:
+    print('a və b eynidir')
+
+if a is not b:
+    print('a və b eyni deyil')
+
+
+empty = None # None - heç nə yoxdur, boşdur
+print(type(empty))
+
+
+a = None
+
+if a is None:
+    print('a boşdur')
+elif a is not None:
+    print('a boş deyil')
+
+
+
+# nested conditions - iç içə şərtlər
+
+# Istifadecinin daxil etdiyi reqemin 10-dan boyuk ve cut eded olmasini
+# yoxlayan proqram.
+
+
+num = int(input('Reqem daxil edin: '))
+
+if num > 10:
+    if num % 2 == 0:
+        print(f'{num} 10-dan boyuk ve cut ededdir.')
+    else:
+        print(f'{num} 10-dan boyuk ve tek ededdir.')
+else:
+    print(f'{num} serti odemir.')
+
+
+# if num > 10 and num % 2 == 0:
+#     print(f'{num} 10-dan boyuk ve cut ededdir.')
+# elif num > 10 and num % 2 != 0:
+#     print(f'{num} 10-dan boyuk ve tek ededdir.')
+# else:
+#     print(f'{num} serti odemir.')
