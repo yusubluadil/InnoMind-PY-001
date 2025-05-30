@@ -32,7 +32,20 @@ else:
 # tətbiq edən proqram yazın. (60-lıq yol)
 # =============================================================== #
 #                     70 - 80 km/s -> 10 manat                    #
-#                     91 - 100 km/s -> 50 manat                   #
+#                     81 - 100 km/s -> 50 manat                   #
 #                     101 - 120 km/s -> 150 manat                 #
 #                     121 >= -> 15 günlük həbs                    #
 # =============================================================== #
+
+speed = int(input("Avtomobil sürətini daxil edin (km/s): "))
+
+if speed >= 121:
+    print('15 günlük həbs!')
+elif speed >= 101:
+    print('150 manat cərimə!')
+elif speed >= 81:
+    print('50 manat cərimə!')
+elif speed >= 70:
+    print('10 manat cərimə!')
+else:
+    print('Cərimə yoxdur!')
