@@ -81,7 +81,7 @@ currencies = {
 # print(currencies)  # {}
 
 
-# 2. copy() - Dict-in surətini çıxarır
+# 2. copy() - Dict-in surətini çıxarır (Səthi kopyalama)
 
 copied_currencies = currencies.copy()
 # print(currencies)  # {'USD': {'name': 'Amerika Birləşmiş Ştatları Dolları', 'symbol': '$', 'rate': 1.0}, ...}
@@ -89,5 +89,56 @@ copied_currencies = currencies.copy()
 
 
 currencies['USD'] = None
-print(currencies)  # {'USD': {'name': 'Amerika Birləşmiş Ştatları Dolları', 'symbol': '$', 'rate': 1.1}, ...}
-print(copied_currencies)  # {'USD': {'name': 'Amerika Birləşmiş Ştatları Dolları', 'symbol': '$', 'rate': 1.1}, ...}
+# print(currencies)  # {'USD': {'name': 'Amerika Birləşmiş Ştatları Dolları', 'symbol': '$', 'rate': 1.1}, ...}
+# print(copied_currencies)  # {'USD': {'name': 'Amerika Birləşmiş Ştatları Dolları', 'symbol': '$', 'rate': 1.1}, ...}
+
+
+
+user_info = {
+    'name': 'Renad',
+    'surname': 'Xasayev',
+    'age': 22,
+    'is_student': True,
+}
+
+# 3. get() - daxil edilmiş açara görə dəyəri qaytarır. Əgər açar mövcud deyilsə,
+# default olaraq None qaytarır. İstəyə görə ikinci parametr olaraq fərqli bir dəyər göndərmək
+# olar.
+
+print(user_info['name'])
+print(user_info.get('name'))
+
+# print(user_info['courses']) # KeyError: 'courses'
+print(user_info.get('courses'))
+print(user_info.get('courses', 'Bu açar mövcud deyil'))  # Bu açar mövcud deyil
+
+
+# 4. items() - Dict-in bütün açar və dəyərlərini list içində tuple olaraq qaytarır.
+
+print(list(user_info.items()))
+
+
+# 5. keys() - Dict-in bütün açarlarını qaytarır.
+
+print(list(user_info.keys()))
+
+
+# 6. values() - Dict-in bütün dəyərlərini qaytarır.
+
+print(list(user_info.values()))
+
+
+# 7. pop() - Daxil edilmiş açara uyğun dəyəri silir və həmin dəyəri qaytarır.
+
+deleted_item = user_info.pop('is_student')
+print(deleted_item)
+# user_info.pop('courses') # Key Error: 'courses'
+
+print(user_info.pop('courses', 'Bu açar mövcud deyil'))  # Bu açar mövcud deyil
+print(user_info)  # {'name': 'Renad', 'surname': 'Xasayev', 'age': 22}
+
+
+# 8. popitem() - Sonuncu açar və dəyəri silir. Tuple olaraq qaytarır.
+
+last_item = user_info.popitem()
+print(last_item)  # ('age', 22) 
