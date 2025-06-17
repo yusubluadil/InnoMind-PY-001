@@ -20,8 +20,8 @@ for number in numbers:
     else:
         odd_nums.append(number)
 
-print(even_nums)
-print(odd_nums)
+# print(even_nums)
+# print(odd_nums)
 
 # Qeyd for loop ilə adətən i, j, k kimi dəyişənlər istifadə olunur.
 
@@ -43,6 +43,78 @@ for i in range(1, 100):
         odd_nums.append(i)
 
 
-print(even_nums)
-print('-'*100)
-print(odd_nums)
+# print(even_nums)
+# print('-' * 100)
+# print(odd_nums)
+
+
+# while loop - Şərtli dövr.
+# Müəyyən bir şərt doğru (True) olduğu müddət ərzində davam edəcək.
+
+# while condition:
+#   ...
+
+
+# counter = 0
+# while counter <= 25:
+#     print(counter)
+#     counter += 2
+
+
+# for i in range(0, 25, 2):
+#     print(i)
+
+# for i in range(0, 25):
+#     if i % 2 == 0:
+#         print(i)
+
+
+# continue, break - Uyğun olaraq davam et və sonlandır deməkdir.
+
+# for i in range(0, 25):
+#     if i % 2 == 1:
+#         continue
+#     print(i)
+
+
+# counter = 0
+# while counter < 10:
+#     if counter == 5:
+#         break
+#     print(counter)
+
+#     counter += 1
+
+
+
+# while True - praktiki olaraq izahı
+# kiçik kalkulyator app
+
+while True:
+    print("""
+    +, -, *, /
+    q - Proqramı sonlandır
+""")
+
+    operation = input('Əməliyyatı daxil edin: ')
+
+    if operation == 'q':
+        print('Proqram sonlandı...')
+        break
+    else:
+        num1 = int(input('1-ci rəqəmi daxil edin: '))
+        num2 = int(input('2-ci rəqəmi daxil edin: '))
+
+        if operation == '+':
+            print(num1 + num2)
+        elif operation == '-':
+            print(abs(num1 - num2))
+        elif operation == '*':
+            print(num1 * num2)
+        elif operation == '/':
+            if num2 == 0:
+                print('0-a bölmə əməliyyatı mümkün deyil!')
+                continue
+            print(num1 / num2)
+        else:
+            print('Daxil etdiyiniz əməliyyat yanlışdır.')
