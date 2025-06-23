@@ -24,7 +24,7 @@ Bəzi müasir istifadələr:
 # 2. Morse əlifbası ilə verilmiş mətni açan proqram tərtib edin.
 
 
-MORSE_CODE_DICT = {
+LATIN_TO_MORSE_CODE_DICT = {
     'A': '.-',     'B': '-...',   'C': '-.-.',
     'D': '-..',    'E': '.',      'F': '..-.',
     'G': '--.',    'H': '....',   'I': '..',
@@ -42,16 +42,19 @@ MORSE_CODE_DICT = {
 }
 
 
+txt = 'Renad'
+
+result = ''
+for i in txt.upper():
+    if i in LATIN_TO_MORSE_CODE_DICT:
+        result += LATIN_TO_MORSE_CODE_DICT[i]
+    else:
+        result += '?'
+
+print(result)
 
 
-
-
-
-
-
-
-
-
+MORSE_CODE_TO_LATIN_DICT = {v: k for k, v in LATIN_TO_MORSE_CODE_DICT.items()}
 
 
 
