@@ -118,3 +118,15 @@ while True:
             print(num1 / num2)
         else:
             print('Daxil etdiyiniz əməliyyat yanlışdır.')
+
+
+
+# enumerate() - Həm index, həm də elementin özünə çatmaq üçün istifadə olunur.
+
+lst = [1, 2, 3, 4, 5]
+
+for x, y in enumerate(lst):
+    print(x, y, sep='->')
+
+# for x, y in enumerate(lst, 10):
+#     print(x, y, sep='->')
