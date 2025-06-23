@@ -24,38 +24,39 @@ Bəzi müasir istifadələr:
 # 2. Morse əlifbası ilə verilmiş mətni açan proqram tərtib edin.
 
 
-LATIN_TO_MORSE_CODE_DICT = {
-    'A': '.-',     'B': '-...',   'C': '-.-.',
-    'D': '-..',    'E': '.',      'F': '..-.',
-    'G': '--.',    'H': '....',   'I': '..',
-    'J': '.---',   'K': '-.-',    'L': '.-..',
-    'M': '--',     'N': '-.',     'O': '---',
-    'P': '.--.',   'Q': '--.-',   'R': '.-.',
-    'S': '...',    'T': '-',      'U': '..-',
-    'V': '...-',   'W': '.--',    'X': '-..-',
-    'Y': '-.--',   'Z': '--..',
-    '0': '-----',  '1': '.----',  '2': '..---',
-    '3': '...--',  '4': '....-',  '5': '.....',
-    '6': '-....',  '7': '--...',  '8': '---..',
-    '9': '----.',
-    ' ': '/'
-}
+# LATIN_TO_MORSE_CODE_DICT = {
+#     'A': '.-',     'B': '-...',   'C': '-.-.',
+#     'D': '-..',    'E': '.',      'F': '..-.',
+#     'G': '--.',    'H': '....',   'I': '..',
+#     'J': '.---',   'K': '-.-',    'L': '.-..',
+#     'M': '--',     'N': '-.',     'O': '---',
+#     'P': '.--.',   'Q': '--.-',   'R': '.-.',
+#     'S': '...',    'T': '-',      'U': '..-',
+#     'V': '...-',   'W': '.--',    'X': '-..-',
+#     'Y': '-.--',   'Z': '--..',
+#     '0': '-----',  '1': '.----',  '2': '..---',
+#     '3': '...--',  '4': '....-',  '5': '.....',
+#     '6': '-....',  '7': '--...',  '8': '---..',
+#     '9': '----.',
+#     ' ': '/'
+# }
 
 
-txt = 'Renad'
+# txt = input('Mətni daxil edin: ')
 
-result = ''
-for i in txt.upper():
-    if i in LATIN_TO_MORSE_CODE_DICT:
-        result += LATIN_TO_MORSE_CODE_DICT[i]
-    else:
-        result += '?'
+# result = ''
+# for i in txt.upper():
+#     if i in LATIN_TO_MORSE_CODE_DICT:
+#         result += LATIN_TO_MORSE_CODE_DICT[i]
+#         result += '/'
+#     else:
+#         result += '?'
 
-print(result)
+# print(result)
 
 
-MORSE_CODE_TO_LATIN_DICT = {v: k for k, v in LATIN_TO_MORSE_CODE_DICT.items()}
-
+# MORSE_CODE_TO_LATIN_DICT = {v: k for k, v in LATIN_TO_MORSE_CODE_DICT.items()}
+# Morse əlifbası ilə yazılan mətn '/' simvolu vasitəsi ilə ayrılır.
 
 
 
@@ -97,3 +98,23 @@ Napoleonun gizli yazışma üsulları:
 
 
 # 1. Napoleonun məktublarını açan proqram tərtib edin.
+# SWALKDJKIOPL
+# ADIL
+
+txt = 'SWALKDJKIOPL'
+result = ''
+
+for i in range(2, len(txt), 3):
+    print(i)
+    result += txt[i]
+
+print(result)
+
+
+c = 2
+res = ''
+while c < len(txt):
+    res += txt[c]
+    c += 3
+
+print(res)
