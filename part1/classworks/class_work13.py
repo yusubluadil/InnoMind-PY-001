@@ -16,6 +16,14 @@
 # 5. Ədəddəki ən böyük rəqəmi tap
 # Məsələn: 98352 → 9
 
+number = '132352'
+
+max_value = 0
+for i in number:
+    if int(i) > max_value:
+        max_value = int(i)
+print(max_value)
+
 # 6. Bir mətndə neçə ədəd olduğunu tap
 # Giriş: "Bu gün 3 qələm, 2 kitab və 1 çanta aldım."
 # Çıxış: 3 ədəd rəqəm tapıldı: 3, 2, 1
@@ -36,6 +44,17 @@
 """
 
 # 9. Binary çevirici: ədəd al və 2-lik say sisteminə dövr ilə çevir
+
+num = 24
+reversed_binary_num = ''
+while num > 1:
+    residue = str(num % 2)
+    num = num // 2
+
+    reversed_binary_num += residue
+reversed_binary_num += str(num)
+
+print(reversed_binary_num[::-1])
 
 # 10. Pythonda ədədləri piramida şəklində çap et
 # Giriş: 5
