@@ -1,3 +1,5 @@
+import random
+
 # 1. 1-dən 100-ə qədər 3-ə bölünən ədədləri çap et
 
 # 2. 0-dan 50-yə qədər cüt ədədləri while dövrü ilə çap et
@@ -28,6 +30,20 @@ print(max_value)
 # Giriş: "Bu gün 3 qələm, 2 kitab və 1 çanta aldım."
 # Çıxış: 3 ədəd rəqəm tapıldı: 3, 2, 1
 
+def get_num_count(string: str):
+    numbers = []
+    for i in string:
+        if i.isdigit():
+            numbers.append(int(i))
+
+    print(f'{len(numbers)} ədəd rəqəm tapıldı:', end=' ')
+    for num in numbers:
+        print(num, end=', ')
+    else:
+        print('\n')
+
+get_num_count('Bu gün 3 qələm, 2 kitab və 1 çanta aldım.')
+
 # 7. Təkrarlanan hərfləri say
 # Giriş: "programming"
 # Çıxış: {'r': 2, 'g': 2, 'm': 2}
@@ -45,16 +61,16 @@ print(max_value)
 
 # 9. Binary çevirici: ədəd al və 2-lik say sisteminə dövr ilə çevir
 
-num = 24
-reversed_binary_num = ''
-while num > 1:
-    residue = str(num % 2)
-    num = num // 2
+# num = 24
+# reversed_binary_num = ''
+# while num > 1:
+#     residue = str(num % 2)
+#     num = num // 2
 
-    reversed_binary_num += residue
-reversed_binary_num += str(num)
+#     reversed_binary_num += residue
+# reversed_binary_num += str(num)
 
-print(reversed_binary_num[::-1])
+# print(reversed_binary_num[::-1])
 
 # 10. Pythonda ədədləri piramida şəklində çap et
 # Giriş: 5
@@ -69,6 +85,14 @@ print(reversed_binary_num[::-1])
 
 # 11. Ədədi bölənlərini tap
 # Məsələn: 12 → [1, 2, 3, 4, 6, 12]
+
+number = 12
+dividers = []
+for i in range(1, number + 1):
+    if number % i == 0:
+        dividers.append(i)
+
+print(number, dividers, sep=' → ')
 
 # 12. Hər dəfə sonuncu hərfi çıxararaq çap et:
 # Çıxış:
@@ -87,7 +111,38 @@ s
 # Giriş: "Salam dünya"
 # Çıxış: "malaS aynyüd"
 
+txt = "Salam dünya"
+splitted_txt = txt.split()
+result = ''
+
+for i in splitted_txt:
+    result += i[::-1]
+    result += ' '
+
+print(result)
+
 # 15. "Təxmin oyunu"
 #     Kompüter 1-dən 20-yə qədər bir ədəd seçir.
 #     İstifadəçi təxmin edir, proqram deyir: "artır", "azalt" və ya "doğrudur".
+#     Ən sonda proqram neçə cəhddə ədədi tapdığımızı qaytarsın.
 #     while dövrü ilə qur.
+
+num = random.randrange(1, 21) # 15
+entered_num = None
+counter = 1
+
+while entered_num != num:
+    try:
+        entered_num = int(input("bir ədəd daxil edin: "))
+    except:
+        print('Ədəd daxil edin')
+        continue
+
+    if entered_num > num:
+        print("Azalt!")
+    elif entered_num < num:
+        print('Artır!')
+    else:
+        print(f'Təbriklər siz ədədi {counter} cəhddə tapdız.')
+
+    counter += 1
