@@ -1,0 +1,3 @@
+Salam.
+Bu gün fayllarla iş mövzusunu öyrənirik!
+Python maraqlıdır.
