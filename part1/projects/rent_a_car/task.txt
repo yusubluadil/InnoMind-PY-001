@@ -1,0 +1,22 @@
+1. Car (Avtomobil)
+
+| Field adı      | Tipi         | Qeydlər                     |
+| -------------- | ------------ | --------------------------- |
+| brand          | CharField    | Məsələn: Toyota             |
+| model          | CharField    | Məsələn: Corolla            |
+| year           | IntegerField | Məsələn: 2020               |
+| license_plate  | CharField    | Məsələn: 10-AB-123          |
+| status         | CharField    | `available`, `rented` və s. |
+| daily_price    | DecimalField | İcarə qiyməti (günlük)      |
+
+
+
+3. Log Sistemi (Fayla yazılacaq)
+
+Avtomobil əlavə etdikdə/redaktə etdikdə/sildikdə
+Avtomobil icarəyə verdikdə
+Avtomobil qaytarıldıqda
+
+[24.07.2025 19:28] INFO: 'renad' sisteme 'adil' adli musteri elave etdi.
+
+logs/activity.log faylına yazılacaq
