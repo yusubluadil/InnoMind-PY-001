@@ -102,3 +102,7 @@ print(c1.rom, c1.ram)
 print(c1.get_info())
 print(c1.get_free_place())
 print(phone.get_info())
+
+
+class A(object):
+    ...

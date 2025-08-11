@@ -34,6 +34,15 @@ class BankAccount:
     def check_balance(self):
         return f"{self.balance} AZN"
 
+    def transfer(self, amount: int, other_account):
+        if amount > self.balance:
+            print('Daxil edilən məbləğ balansda mövcud deyil!')
+        else:
+            self.withdraw(amount)
+            other_account.deposit(amount)
+
+            print('Transfer əməliyyatı uğurla icra edildi.')
+
 b1 = BankAccount('Adil Yusublu')
 b2 = BankAccount('Renad Xasayev')
 
@@ -41,7 +50,10 @@ print(b1.owner)
 print(b1.check_balance())
 
 b1.deposit(500)
-b1.withdraw(300)
+# b1.withdraw(300)
+
+# print(b1.check_balance())
+b1.transfer(200, b2)
 
 print(b1.check_balance())
-# b1.transfer(200, b2)
+print(b2.check_balance())

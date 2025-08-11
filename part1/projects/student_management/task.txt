@@ -1,0 +1,10 @@
+Təsvir: Tələbə məlumatları əlavə et, yenilə, sil və siyahıla.
+Tələblər:
+
+    Student sinfi (ad, soyad, yaş, sinif).
+
+    StudentManagementSystem sinfi.
+
+    Tələbə əlavə et, sil, siyahıla və axtarış et funksiyaları.
+
+    Konsol menyusu.
