@@ -1,3 +1,4 @@
+from lesson15 import get_execute_time
 # # Functions
 
 # # def - Açar sözü vasitəsilə təyin olunur.
@@ -90,6 +91,7 @@ say_hi(name1='Adil', name2='Nihat', name3='Orxan') # Keyword arguments
 say_hi('Adil', 'Nihat', 'Orxan') # Positional arguments
 
 
+@get_execute_time
 def change_currency(amount=0, curr=None):
     if curr is None:
         print('Valyutanı daxil edin.')
