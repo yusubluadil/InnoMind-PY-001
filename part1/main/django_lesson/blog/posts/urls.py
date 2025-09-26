@@ -12,7 +12,7 @@ from .views import (
 # http://127.0.0.1:8000/posts/create/ - Create blog
 
 urlpatterns = [
-    path('', all_blogs),
-    path('<int:pk>/', detail_blog),
-    path('create/', create_blog)
+    path('', all_blogs, name='all_blogs'),
+    path('<int:pk>/', detail_blog, name='detail_blog'),
+    path('create/', create_blog, name='create_blog')
 ]

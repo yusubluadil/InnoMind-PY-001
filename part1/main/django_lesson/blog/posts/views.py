@@ -1,12 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import (
+    render,
+    redirect
+)
 
 from .models import Post
-
+from .forms import PostForm
 
 
 def all_blogs(request):
-    all_posts = Post.objects.all()
+    all_posts = Post.objects.order_by('-id')
 
     context = {
         'posts': all_posts
@@ -26,4 +28,15 @@ def detail_blog(request, pk):
 
 
 def create_blog(request):
-    return HttpResponse('Blog yaratmaq ucun olan sehife')
+    if request.method == 'GET':
+        form = PostForm()
+        return render(request, 'create-blog.html', context={"form": form})
+    else:
+        user = request.user
+        form = PostForm(request.POST)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.author = user
+            new_form.save()
+            form.save_m2m()
+            return redirect('all_blogs')

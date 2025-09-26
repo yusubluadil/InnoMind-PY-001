@@ -12,7 +12,10 @@
     <p>{{ post.title }}</p>
     <p>{{ post.description }}</p>
     <p>{{ post.publish_date }}</p>
-    <p>{{ post.category }}</p>
+
+    {% for ct in post.categories.all %}
+    <p style="background-color:DodgerBlue;">{{ ct.name }}</p>
+    {% endfor %}
     <p>---------------------------</p>
     {% endfor %}
 </body>
