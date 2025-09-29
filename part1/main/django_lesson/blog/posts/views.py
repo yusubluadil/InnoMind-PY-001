@@ -14,7 +14,7 @@ def all_blogs(request):
         'posts': all_posts
     }
 
-    return render(request, 'all-blogs.html', context)
+    return render(request, 'blogs/all-blogs.html', context)
 
 
 def detail_blog(request, pk):
@@ -24,13 +24,13 @@ def detail_blog(request, pk):
         'post': blog
     }
 
-    return render(request, 'detail-blogs.html', context)
+    return render(request, 'blogs/detail-blogs.html', context)
 
 
 def create_blog(request):
     if request.method == 'GET':
         form = PostForm()
-        return render(request, 'create-blog.html', context={"form": form})
+        return render(request, 'blogs/create-blog.html', context={"form": form})
     else:
         user = request.user
         form = PostForm(request.POST)

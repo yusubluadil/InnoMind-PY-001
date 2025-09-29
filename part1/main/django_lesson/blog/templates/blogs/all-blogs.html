@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+
+{% block title %}All blogs{% endblock title %}
+
+{% block content %}
+{% if messages %}
+<div class="alert alert-red" role="alert">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+{% for post in posts %}
+<h3>Author: {{ post.author }}</h3>
+<br><br>
+<p>{{ post.title }}</p>
+<p>{{ post.description }}</p>
+<p>{{ post.publish_date }}</p>
+
+{% for ct in post.categories.all %}
+<p style="background-color:DodgerBlue;">{{ ct.name }}</p>
+{% endfor %}
+<p>---------------------------</p>
+{% endfor %}
+{% endblock content %}
