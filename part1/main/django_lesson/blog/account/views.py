@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from .forms import RegisterForm, LoginForm
 
-
+# POST and GET
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)

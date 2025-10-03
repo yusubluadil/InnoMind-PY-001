@@ -1,12 +1,20 @@
 {% extends "base/base.html" %}
+{% load static %}
 
 {% block title %}Detail blog{% endblock title %}
 
 {% block content %}
-<h3>Author: {{ post.author }}</h3>
-<br><br>
-<p>{{ post.title }}</p>
-<p>{{ post.description }}</p>
-<p>{{ post.publish_date }}</p>
-<p>{{ post.category }}</p>
+<div class="card text-bg-dark">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" class="card-img" alt="...">
+    {% else %}
+    <img class="card-img" alt="Blog şəkli">
+    {% endif %}
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.description }}</p>
+    <p class="card-text"><small>{{ post.publish_date }}</small></p>
+  </div>
+</div>
 {% endblock content %}
+

@@ -12,15 +12,29 @@
 {% endif %}
 
 {% for post in posts %}
-<h3>Author: {{ post.author }}</h3>
+
+<div class="col-sm-3 mb-4 mb-sm-2">
+    <div class="card border-primary">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }} - {{ post.author }}</h5>
+        <p class="card-text">{{ post.description }}</p>
+        <p class="card-text">{{ post.publish_date }}</p>
+        <a href="{% url "detail_blog" post.id %}" class="btn btn-primary">Ətraflı</a>
+      </div>
+    </div>
+</div>
+
+
+
+{% comment %} <h3>Author: {{ post.author }}</h3>
 <br><br>
-<p>{{ post.title }}</p>
+<p></p>
 <p>{{ post.description }}</p>
-<p>{{ post.publish_date }}</p>
+<p></p>
 
 {% for ct in post.categories.all %}
 <p style="background-color:DodgerBlue;">{{ ct.name }}</p>
 {% endfor %}
-<p>---------------------------</p>
+<p>---------------------------</p> {% endcomment %}
 {% endfor %}
 {% endblock content %}
