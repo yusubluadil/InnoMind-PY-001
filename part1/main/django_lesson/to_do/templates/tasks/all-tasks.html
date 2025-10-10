@@ -1,0 +1,51 @@
+{% extends "base/main.html" %}
+
+
+{% block title %} List {% endblock title %}
+
+{% block content %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning" role="alert">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="container">
+    <div class="row">
+    {% for task in tasks %}
+    {% if task.status == 'I' %}
+    <div class="card col border-warning m-1" style="width: 18rem;">
+    {% elif task.status == 'D' %}
+    <div class="card col border-success m-1" style="width: 18rem;">
+    {% else %}
+    <div class="card col m-1" style="width: 18rem;">
+    {% endif %}
+    
+    <div class="card-body">
+        <h5 class="card-title">{{ task.title }}</h5>
+        <p class="card-text">{{ task.description }}</p>
+    </div>
+    <div class="card-body">
+        <form action="{% url 'change_status_to_in_progress' task.pk %}" method="POST" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="card-link" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;">
+                İn Progress
+            </button>
+        </form>
+
+        <form action="{% url 'change_status_to_done' task.pk %}" method="POST" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="card-link" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;">
+                Done
+            </button>
+        </form>
+        <a href="#" class="card-link">Detallı bax</a>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
