@@ -1,0 +1,16 @@
+{% extends "base/main.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} Add {% endblock title %}
+
+{% block content %}
+
+<form method='post'>
+    {% csrf_token %}
+    {{form|crispy}}
+    <div class="position-relative">
+        <input type="submit" class="btn btn-outline-primary position-absolute top-0 start-50 translate-middle mt-3">
+    </div>
+</form>
+{% endblock content %}

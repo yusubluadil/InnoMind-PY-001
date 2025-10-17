@@ -23,6 +23,6 @@ from django.urls import (
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # path('accounts/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
     path('to-do/', include('tasks.urls')),
 ]
