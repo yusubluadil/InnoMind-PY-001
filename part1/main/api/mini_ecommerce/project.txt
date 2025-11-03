@@ -1,0 +1,9 @@
+Mini eCommerce API
+Modeller:
+Product(name, price, stock, category)
+Order(user, products, total_price)
+
+Əlavə:
+Product-lar üçün filter və sort.
+Sifariş zamanı avtomatik total_price hesablanır.
+@transaction.atomic istifadə.
