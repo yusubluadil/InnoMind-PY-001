@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from datetime import timedelta
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,10 +43,12 @@ INSTALLED_APPS = [
     # 3rd party packages
     'rest_framework',
     'django_filters',
+    'rest_framework_simplejwt',
 
     # Local
     'products.apps.ProductsConfig',
     'orders.apps.OrdersConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +79,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+
+AUTH_USER_MODEL = "users.CustomUser"
 
 
 # Database
@@ -109,6 +115,14 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DATETIME_FORMAT': "%d-%m-%Y %H:%M:%S",
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=10),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=3),
 }
 
 

@@ -24,7 +24,7 @@ class ListOrderAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        queryset = Order.objects.filter(user=user)
+        queryset = Order.objects.filter(user=user).order_by('-id')
         return queryset
 
 
